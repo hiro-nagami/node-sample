@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+option go_package = "app/proto";
+
+package proto;
+
+// The greeting service definition.
+service UserService {
+  // Sends a greeting
+  rpc CreateUser (CreateUserRequest) returns (UserResponse) {}
+}
+
+// The request message containing the user's name.
+message CreateUserRequest {
+  NewUser user = 1;
+}
+
+// The response message containing the greetings
+message UserResponse {
+  User user = 1;
+}
+
+// The response message containing the greetings
+
+message NewUser {
+  string name = 1;
+  int32 sex = 3;
+}
+
+message User {
+  int32 id = 1;
+  string name = 2;
+  int32 sex = 3;
+}
