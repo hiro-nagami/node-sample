@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+option go_package = "app/proto";
+
+package proto;
+
+// The greeting service definition.
+service TodoService {
+  // Sends a greeting
+  rpc CreateTodo (CreateTodoRequest) returns (TodoResponse) {}
+  rpc Todos (TodosRequest) returns (TodosResponse) {}
+}
+
+// The request message containing the user's name.
+message CreateTodoRequest {
+  NewTodo todo = 1;
+}
+
+// The response message containing the greetings
+message TodoResponse {
+  Todo todo = 1;
+}
+
+// The request message containing the user's name.
+message TodosRequest {
+  int32 userId = 1;
+}
+
+// The request message containing the user's name.
+message TodosResponse {
+  repeated Todo todos = 1;
+}
+
+// The response message containing the greetings
+
+message NewTodo {
+  string title = 1;
+  bool done = 2;
+  int32 userId = 3;
+}
+
+message Todo {
+  int32 id = 1;
+  string title = 2;
+  bool done = 3;
+  int32 userId = 4;
+}
