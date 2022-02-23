@@ -1,5 +1,5 @@
-import { app } from 'controller/api'
+import { listen } from 'controller/api'
 
-const port = process.env.PORT
+const port = process.env.PORT || "3000"
 
-app.listen(port);
+listen(port)

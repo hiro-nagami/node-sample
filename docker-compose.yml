@@ -11,7 +11,7 @@ services:
     volumes:
       - ".:/app"
     working_dir: /app
-    command: yarn dev
+    command: yarn watch
     networks:
       - default
       - sample-shared

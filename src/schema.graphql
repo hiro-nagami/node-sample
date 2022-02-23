@@ -1,0 +1,12 @@
+type Todo {
+    title: String
+    userId: Int
+}
+
+type Query {
+    todos: [Todo]
+}
+
+type Mutation {
+    createTodo (title: String, userId: Int): Todo
+}
