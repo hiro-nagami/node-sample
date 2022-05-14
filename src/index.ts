@@ -1,5 +1,7 @@
-import { listen } from 'controller/api'
 
-const port = process.env.PORT || "3000"
+import server from 'controller/functionsServer';
+// import server from 'controller/server';
 
-listen(port)
+// listen()
+
+exports.graphql = server;

@@ -1,7 +1,7 @@
 {
   "name": "node-sample",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
   "repository": "ssh://git@github.com/hiro-nagami/node-sample.git",
   "scripts": {
     "clean": "rimraf dist/*",
@@ -9,7 +9,7 @@
     "tsc": "tsc -p tsconfig.json",
     "alias": "tsc-alias -p tsconfig.json",
     "build": "npm-run-all clean cp-files tsc alias",
-    "//dev": "node dist/index.js",
+    "serve": "npm run build && firebase emulators:start --only functions",
     "dev": "tsc-watch --onSuccess \"npm run watch\"",
     "watch": "nodemon --watch './**/*.{ts,graphql}' --exec 'node --experimental-specifier-resolution=node --loader ts-node/esm' src/index.ts",
     "generate": "graphql-codegen --config codegen.yml"
@@ -40,6 +40,8 @@
     "apollo-server-express": "^3.6.3",
     "cors": "^2.8.5",
     "express": "^4.17.3",
+    "firebase-admin": "^10.2.0",
+    "firebase-functions": "^3.21.1",
     "google-protobuf": "^3.19.4",
     "graphql": "^16.3.0"
   }

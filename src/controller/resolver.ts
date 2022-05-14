@@ -4,7 +4,6 @@ import fs from "fs";
 import { credentials } from '@grpc/grpc-js';
 import { TodoServiceClient } from 'gen/proto/todo_service_grpc_pb';
 import { CreateTodoRequest, NewTodo, Todo } from 'gen/proto/todo_service_pb';
-import { time } from 'console';
 
 const grpc_server_url=process.env.GRPC_SERVER_URL || 'localhost:4000';
 export const typeDefs = fs.readFileSync("src/schema.graphql", { encoding: "utf8" });
